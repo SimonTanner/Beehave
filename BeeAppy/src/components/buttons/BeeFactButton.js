@@ -9,11 +9,9 @@ import {
 import BeeFact from '../../components/BeeFactApi';
 import style from '../../styles/style.js';
 
-
 const beeFact = new BeeFact();
 
 export default class BeeFactButton extends React.Component {
-
   render() {
     return(
       <View>

@@ -4,17 +4,15 @@ import BeeFactButton from '../components/buttons/BeeFactButton';
 import Donate from './Donate';
 import style from '../styles/style';
 import {
+  Image,
   StyleSheet,
   Text,
-  View,
-  Button,
   TouchableHighlight,
-  Image
+  View,
 } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 export default class Home extends React.Component {
-
   render() {
     const { navigate } = this.props.navigation;
     return(
@@ -38,9 +36,9 @@ export default class Home extends React.Component {
               source={require('../img/earth-globe.png')}
             />
           </TouchableHighlight>
-          <View style={style.beeFactButton}>
-            <BeeFactButton/>
-          </View>
+        <View style={style.beeFactButton}>
+          <BeeFactButton/>
+        </View>
       </View>
     );
   }

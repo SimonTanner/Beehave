@@ -9,7 +9,7 @@ var style = StyleSheet.create({
 
   homeTextStyle: {
     fontSize: 20,
-    backgroundColor: '#48FB0D',
+    backgroundColor: '#A5DBEB',
     justifyContent: 'center',
   },
 
@@ -17,7 +17,7 @@ var style = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#48FB0D',
+    backgroundColor: '#A5DBEB',
   },
 
   map: {
