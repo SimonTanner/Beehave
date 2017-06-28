@@ -39,7 +39,7 @@ export default class Donate extends React.Component {
               source={require('../img/fruit/pear.png')}
             />
           </TouchableHighlight>
-          <TouchableHighlight onPress={() => Linking.openURL('http://www.oxfam.org.uk/shop/oxfam-unwrapped/gardeners/honey-bees-ou1004ml')}>
+          <TouchableHighlight onPress={() => Linking.openURL('https://www.oxfam.org.uk/shop/oxfam-unwrapped/gardeners/honey-bees-ou1004ml')}>
             <Image
               style={style.donateImageButtonStyle4}
               source={require('../img/fruit/pineapple.png')}
