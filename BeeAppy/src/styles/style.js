@@ -3,28 +3,21 @@ var { StyleSheet } = React;
 
 var style = StyleSheet.create({
   viewStyle: {
-    backgroundColor: '#fff6fb',
-    justifyContent: 'center',
-    alignItems: 'center',
+    backgroundColor: '#A5DBEB',
     flex: 1,
   },
 
   homeTextStyle: {
     fontSize: 20,
-    backgroundColor: '#ffcd6d',
+    backgroundColor: '#A5DBEB',
     justifyContent: 'center',
-  },
-
-  imageButtonStyle: {
-    width: 50, height: 50,
-    alignItems: 'center',
   },
 
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff6fb',
+    backgroundColor: '#A5DBEB',
   },
 
   map: {
@@ -33,6 +26,82 @@ var style = StyleSheet.create({
     top: 0,
     bottom: 0,
     position: 'absolute',
+  },
+
+  donateListStyle: {
+    flex: 1,
+    flexDirection: 'column',
+  },
+
+  donateText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    alignItems: 'center',
+  },
+
+  imageButtonStyle: {
+    width: 60, height: 60,
+    alignItems: 'center',
+  },
+
+  beeButtonStyle: {
+    width: 100, height: 100,
+    position: 'absolute',
+    top: 190,
+    left: 140,
+  },
+
+  donateImageButtonStyle1: {
+    width: 80, height: 80,
+    position: 'absolute',
+    top: 320,
+    left: 80,
+  },
+
+  donateImageButtonStyle2: {
+    width: 80, height: 80,
+    position: 'absolute',
+    top: 320,
+    left: 225,
+  },
+
+  donateImageButtonStyle3: {
+    width: 80, height: 80,
+    position: 'absolute',
+    top: 100,
+    left: 80,
+  },
+
+  donateImageButtonStyle4: {
+    width: 80, height: 80,
+    position: 'absolute',
+    top: 100,
+    left: 225,
+  },
+
+  donateImageButtonStyle5: {
+    width: 80, height: 80,
+    position: 'absolute',
+    top: 200,
+    left: 160,
+  },
+
+  donateButton: {
+    position: 'absolute',
+    top: 510,
+    right: 50,
+  },
+
+  beehiveButton: {
+    position: 'absolute',
+    top: 510,
+    left: 160,
+  },
+
+  beeFactButton: {
+    position: 'absolute',
+    top: 510,
+    left: 50,
   },
 });
 

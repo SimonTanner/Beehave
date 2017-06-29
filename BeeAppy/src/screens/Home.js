@@ -1,42 +1,46 @@
 import React from 'react';
-import BeeButton from '../components/BeeButton';
-import BeeFactButton from '../components/BeeFactButton';
+import BeeButton from '../components/buttons/BeeButton';
+import BeeFactButton from '../components/buttons/BeeFactButton';
 import GetGeoLocation from '../components/GetGeoLocation';
 import Donate from './Donate';
-import style from '../styles/style.js';
-import { StyleSheet, Text, View, Button, TouchableHighlight, Image } from 'react-native';
+import style from '../styles/style';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableHighlight,
+  View,
+} from 'react-native';
 import { StackNavigator } from 'react-navigation';
 
 export default class Home extends React.Component {
-  static navigationOptions = {
-    title: 'BeeAppy',
-  };
   render() {
     const { navigate } = this.props.navigation;
     return(
-      <View>
-        <Text>Hi, welcome to BeeAppy </Text>
-        <Text style={style.homeTextStyle}>{'\n'}Spotted a bee?  Click the button!{'\n'}</Text>
+      <View style={style.viewStyle}>
         <BeeButton />
-        <Button
-          onPress={() => navigate('Donate')}
-          title='Help the bees!'
-        />
-        <Button
-          onPress={() => navigate('BeeHive')}
-          title='See the bees!'
-        />
-        <BeeFactButton />
+          <TouchableHighlight
+            onPress={() => navigate('Donate')}
+            underlayColor="#A5DBEB"
+            style={style.donateButton}>
+            <Image
+              style={style.imageButtonStyle}
+              source={require('../img/honey.png')}
+            />
+          </TouchableHighlight>
+          <TouchableHighlight
+            onPress={() => navigate('BeeHive')}
+            underlayColor="#A5DBEB"
+            style={style.beehiveButton}>
+            <Image
+              style={style.imageButtonStyle}
+              source={require('../img/earth-globe.png')}
+            />
+          </TouchableHighlight>
+        <View style={style.beeFactButton}>
+          <BeeFactButton/>
+        </View>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableHighlight, View, Text, Image } from 'react-native';
-import style from '../styles/style.js';
-import BeeAPI from './BeeAPI';
-import GetGeoLocation from './GetGeoLocation';
+import style from '../../styles/style.js';
+import BeeAPI from '../BeeAPI';
+import GetGeoLocation from '../GetGeoLocation';
 
 const api = new BeeAPI();
 
@@ -32,12 +32,12 @@ export default class BeeButton extends React.Component {
         <GetGeoLocation passGeoLocation = {this.updateGeoLocation} />
         <Text>Current latitude: {JSON.stringify(this.state.latitude)}</Text>
         <Text>Current longitude: {JSON.stringify(this.state.longitude)}</Text>
-
         <TouchableHighlight
+          underlayColor="#A5DBEB"
           onPress = {() => api.POSTbee({latitude: this.state.latitude, longitude: this.state.longitude})}>
           <Image
-            style={style.imageButtonStyle}
-            source={require('../img/beeAbstract2.jpg')}
+            style={style.beeButtonStyle}
+            source={require('../../img/bee.png')}
           />
         </TouchableHighlight>
       </View>
