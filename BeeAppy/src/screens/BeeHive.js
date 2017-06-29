@@ -1,69 +1,40 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import style from '../styles/style.js';
-import StackNavigator from 'react-navigation';
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  View,
+  Text
+} from 'react-native';
+import { StackNavigator } from 'react-navigation';
 import MapView from 'react-native-maps';
-import GetGeoLocation from '../components/GetGeoLocation';
 
-export default class BeeHive extends React.Component {
-
-  static navigationOptions = {
-    title: 'BeeHive',
-  };
+export default class GetGeoLocation extends React.Component {
 
   constructor(props) {
-    super(props)
-
+    super(props);
     this.state = {
-      markers: [],
-      region: {
-        latitude: null,
-        longitude: null,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }
-    }
+      latitude: 0.0,
+      longitude: 0.0,
+      error: null,
+    };
   }
 
-  getLocation(lat, lon) {
-    this.setState({
-      region: {
-        latitude: lat,
-        longitude: lon,
-        latitudeDelta: 0.0922,
-        longitudeDelta: 0.0421,
-      }
-    })
-  }
-
-  componentWillMount() {
-    fetch("https://bee-appy.herokuapp.com/bees").then((res) => res.json()).then((res) => {
-      this.setState({
-        markers: res
-      })
-    });
+  componentDidMount() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const lat = position.coords.latitude
-        const lon = position.coords.longitude
-        this.getLocation(lat,lon)
+        this.setState({
+          latitude: position.coords.latitude,
+          longitude: position.coords.longitude,
+          error: null,
+        });
+        this.props.passGeoLocation(this.state);
       },
+
+      (error) => this.setState({ error: error.message }),
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 },
     );
   }
 
   render() {
-    return (
-      <View style={style.container}>
-        <MapView style={style.map}
-          initialRegion={this.state.region}
-          >
-          {this.state.markers.map(marker => (
-            <MapView.Marker
-              coordinate={{latitude: marker.latitude,longitude: marker.longitude}}
-            />
-          ))}
-        </MapView>
-      </View>
-    );
+    return null;
   }
 }
