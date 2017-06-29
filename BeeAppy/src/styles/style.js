@@ -7,17 +7,19 @@ var style = StyleSheet.create({
     flex: 1,
   },
 
-  homeTextStyle: {
-    fontSize: 20,
+  coordText: {
+    fontSize: 14,
     backgroundColor: '#A5DBEB',
     justifyContent: 'center',
+    left: 70,
+    top: 100,
   },
 
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#A5DBEB',
+  compassButton: {
+    width: 60, height: 60,
+    position: 'absolute',
+    bottom: 510,
+    left: 160,
   },
 
   map: {
@@ -26,17 +28,6 @@ var style = StyleSheet.create({
     top: 0,
     bottom: 0,
     position: 'absolute',
-  },
-
-  donateListStyle: {
-    flex: 1,
-    flexDirection: 'column',
-  },
-
-  donateText: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignItems: 'center',
   },
 
   imageButtonStyle: {

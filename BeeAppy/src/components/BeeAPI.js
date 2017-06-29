@@ -30,8 +30,8 @@ export default class BeeAPI extends React.Component {
     .then((response) => response.json())
     .then((responseData) => {
       AlertIOS.alert(
-        "Bee has been posted",
-        "latitude: " + JSON.stringify(responseData.latitude) + "longitude: " + JSON.stringify(responseData.longitude)
+        "You spotted a bee!",
+        "latitude: " + JSON.stringify(responseData.latitude) + "\nlongitude: " + JSON.stringify(responseData.longitude)
       )
     })
     .catch((error) => {

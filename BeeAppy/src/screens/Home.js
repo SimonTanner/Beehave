@@ -14,10 +14,17 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 export default class Home extends React.Component {
+  static navigationOptions = {
+    title: 'BeeAppy',
+  }
   render() {
     const { navigate } = this.props.navigation;
     return(
       <View style={style.viewStyle}>
+        <Image
+          style={style.compassButton}
+          source={require('../img/compass.png')}
+        />
         <BeeButton />
           <TouchableHighlight
             onPress={() => navigate('Donate')}
