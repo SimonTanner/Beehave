@@ -1,6 +1,7 @@
 import React from 'react';
 import BeeButton from '../components/buttons/BeeButton';
 import BeeFactButton from '../components/buttons/BeeFactButton';
+import GetGeoLocation from '../components/GetGeoLocation';
 import Donate from './Donate';
 import style from '../styles/style';
 import {
