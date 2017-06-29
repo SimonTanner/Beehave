@@ -1,12 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import style from '../styles/style.js';
-import BeeAPI  from '../components/BeeAPI';
 import StackNavigator from 'react-navigation';
 import MapView from 'react-native-maps';
 import GetGeoLocation from '../components/GetGeoLocation';
-
-const api = new BeeAPI();
 
 export default class BeeHive extends React.Component {
 
@@ -19,14 +16,22 @@ export default class BeeHive extends React.Component {
 
     this.state = {
       markers: [],
-      initlatitude: null,
-      initlongitude: null
+      region: {
+        latitude: null,
+        longitude: null,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
+      }
     }
   }
 
-  updateGeoLocation = (geoData) => {
-    this.setState({ initlatitude:  geoData.latitude,
-    initlongitude: geoData.longitude});
+  getLocation(lat, lon) {
+    this.setState({
+      region: {
+        latitude: lat,
+        longitude: lon,
+      }
+    })
   }
 
   componentWillMount() {
@@ -34,21 +39,24 @@ export default class BeeHive extends React.Component {
       this.setState({
         markers: res
       })
-    })
+    });
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude
+        const lon = position.coords.longitude
+        this.getLocation(lat,lon)
+      },
+    );
   }
 
   render() {
     console.log(this.state.markers);
+    console.log(this.state.initlatitude);
     return (
       <View style={style.container}>
-      <GetGeoLocation passGeoLocation = {this.updateGeoLocation} />
         <MapView style={style.map}
-          initialRegion={{
-            latitude: this.state.initlatitude,
-            longitude: this.state.initlongitude,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}>
+          initialRegion={this.state.region}
+          >
           {this.state.markers.map(marker => (
             <MapView.Marker
               coordinate={{latitude: marker.latitude,longitude: marker.longitude}}
