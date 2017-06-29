@@ -60,6 +60,7 @@ export default class BeeHive extends React.Component {
           {this.state.markers.map(marker => (
             <MapView.Marker
               coordinate={{latitude: marker.latitude,longitude: marker.longitude}}
+              image={require('../img/bee_pin.png')}
             />
           ))}
         </MapView>
