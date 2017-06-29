@@ -29,9 +29,10 @@ export default class BeeButton extends React.Component {
     var geo = this.state.geoLocation;
     return(
       <View>
+
         <GetGeoLocation passGeoLocation = {this.updateGeoLocation} />
-        <Text>Current latitude: {JSON.stringify(this.state.latitude)}</Text>
-        <Text>Current longitude: {JSON.stringify(this.state.longitude)}</Text>
+        <Text style={style.coordText}>Your latitude: {JSON.stringify(this.state.latitude)}</Text>
+        <Text style={style.coordText}>Your longitude: {JSON.stringify(this.state.longitude)}</Text>
         <TouchableHighlight
           underlayColor="#A5DBEB"
           onPress = {() => api.POSTbee({latitude: this.state.latitude, longitude: this.state.longitude})}>

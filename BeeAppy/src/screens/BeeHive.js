@@ -53,7 +53,7 @@ export default class BeeHive extends React.Component {
 
   render() {
     return (
-      <View style={style.container}>
+      <View style={style.viewStyle}>
         <MapView style={style.map}
           initialRegion={this.state.region}
           >

@@ -21,7 +21,7 @@ export default class Donate extends React.Component {
     return (
 
       <View style={style.viewStyle}>
-        <View style={style.donateListStyle}>
+        <View>
           <TouchableHighlight
             onPress={() => Linking.openURL('https://bumblebeeconservation.org/')}
 >

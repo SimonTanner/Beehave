@@ -21,6 +21,10 @@ export default class Home extends React.Component {
     const { navigate } = this.props.navigation;
     return(
       <View style={style.viewStyle}>
+        <Image
+          style={style.compassButton}
+          source={require('../img/compass.png')}
+        />
         <BeeButton />
           <TouchableHighlight
             onPress={() => navigate('Donate')}
