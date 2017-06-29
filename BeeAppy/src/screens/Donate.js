@@ -12,6 +12,9 @@ import style from '../styles/style.js';
 import StackNavigator from 'react-navigation';
 
 export default class Donate extends React.Component {
+  static navigationOptions = {
+    title: 'Bee Informed',
+  }
 
   render() {
     const { navigate } = this.props.navigation;
