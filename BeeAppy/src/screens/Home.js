@@ -14,6 +14,9 @@ import {
 import { StackNavigator } from 'react-navigation';
 
 export default class Home extends React.Component {
+  static navigationOptions = {
+    title: 'BeeAppy',
+  }
   render() {
     const { navigate } = this.props.navigation;
     return(
