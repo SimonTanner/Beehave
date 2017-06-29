@@ -30,6 +30,8 @@ export default class BeeHive extends React.Component {
       region: {
         latitude: lat,
         longitude: lon,
+        latitudeDelta: 0.0922,
+        longitudeDelta: 0.0421,
       }
     })
   }
