@@ -50,8 +50,6 @@ export default class BeeHive extends React.Component {
   }
 
   render() {
-    console.log(this.state.markers);
-    console.log(this.state.initlatitude);
     return (
       <View style={style.container}>
         <MapView style={style.map}
