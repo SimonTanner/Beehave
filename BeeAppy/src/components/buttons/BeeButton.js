@@ -1,8 +1,8 @@
 import React from 'react';
 import { TouchableHighlight, View, Text, Image } from 'react-native';
-import style from '../styles/style.js';
-import BeeAPI from './BeeAPI';
-import GetGeoLocation from './GetGeoLocation';
+import style from '../../styles/style.js';
+import BeeAPI from '../BeeAPI';
+import GetGeoLocation from '../GetGeoLocation';
 
 const api = new BeeAPI();
 
